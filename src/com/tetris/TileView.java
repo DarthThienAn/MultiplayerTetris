@@ -40,7 +40,7 @@ public class TileView extends View {
 	 * dimensions. X/Y Tile Counts are the number of tiles that will be drawn.
 	 */
 
-	protected static int mTileSize;
+	protected static int mTileSize = 0;
 
 	// want it to be 10x20, add 2 to each dimension for walls.
 	protected final static int mXTileCount = 12;
@@ -63,12 +63,9 @@ public class TileView extends View {
 
 	private final Paint mPaint = new Paint();
 
-	public TileView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-
-		DisplayMetrics display = getResources().getDisplayMetrics();
-		int w = display.widthPixels;
-		mTileSize = (int) (Math.floor(w / mYTileCount) * .9);
+	public TileView(Context context)
+	{
+		super(context);
 	}
 
 	public TileView(Context context, AttributeSet attrs) {
@@ -77,7 +74,15 @@ public class TileView extends View {
 		DisplayMetrics display = getResources().getDisplayMetrics();
 		int w = display.widthPixels;
 		mTileSize = (int) (Math.floor(w / mYTileCount) * .9);
+	}	
+	public TileView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+
+		DisplayMetrics display = getResources().getDisplayMetrics();
+		int w = display.widthPixels;
+		mTileSize = (int) (Math.floor(w / mYTileCount) * .9);
 	}
+
 
 	/**
 	 * Rests the internal array of Bitmaps used for drawing tiles, and sets the

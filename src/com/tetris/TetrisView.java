@@ -56,7 +56,7 @@ public class TetrisView extends TileView {
 	private static final int PURPLEUNIT = 6;
 	private static final int REDUNIT = 7;
 	private static final int WALL = 8;
-	private static final int WALLTOP = 9;
+//	private static final int WALLTOP = 9;
 
 	/**
 	 * mScore: used to keep score mMoveDelay: number of milliseconds between
@@ -108,6 +108,10 @@ public class TetrisView extends TileView {
 	 * @param context
 	 * @param attrs
 	 */
+	public TetrisView(Context context)
+	{
+		super(context);
+	}
 	public TetrisView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		initTetrisView();
@@ -118,11 +122,11 @@ public class TetrisView extends TileView {
 		initTetrisView();
 	}
 
-	public TetrisView(Context context, AttributeSet attrs, int defStyle, TetrisGame a) {
-		super(context, attrs, defStyle);
-		initTetrisView();
-		mTetrisGame = a;
-	}
+//	public TetrisView(Context context, AttributeSet attrs, int defStyle, TetrisGame a) {
+//		super(context, attrs, defStyle);
+//		initTetrisView();
+//		mTetrisGame = a;
+//	}
 
 	private void initTetrisView() {
 		setFocusable(true);
@@ -138,7 +142,7 @@ public class TetrisView extends TileView {
 		loadTile(PURPLEUNIT, r.getDrawable(R.drawable.purpleunit));
 		loadTile(REDUNIT, r.getDrawable(R.drawable.redunit));
 		loadTile(WALL, r.getDrawable(R.drawable.wall));
-		loadTile(WALLTOP, r.getDrawable(R.drawable.walltop));
+//		loadTile(WALLTOP, r.getDrawable(R.drawable.walltop));
 
 		if (mTetrisGame == null)
 			mTetrisGame = new TetrisGame();

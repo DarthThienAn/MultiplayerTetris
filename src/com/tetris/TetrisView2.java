@@ -54,7 +54,7 @@ public class TetrisView2 extends TileView2 {
 	private static final int REDUNIT = 7;
 	private static final int BLACK = 8;
 	private static final int WALL = 9;
-	private static final int WALLTOP = 10;
+//	private static final int WALLTOP = 10;
 
 	/**
 	 * mScore: used to keep score mMoveDelay: number of milliseconds between
@@ -126,7 +126,7 @@ public class TetrisView2 extends TileView2 {
 		loadTile(REDUNIT, r.getDrawable(R.drawable.redunit));
 		loadTile(BLACK, r.getDrawable(R.drawable.black));
 		loadTile(WALL, r.getDrawable(R.drawable.wall));
-		loadTile(WALLTOP, r.getDrawable(R.drawable.walltop));
+//		loadTile(WALLTOP, r.getDrawable(R.drawable.walltop));
 
 		if (mTetrisGame == null)
 			mTetrisGame = new TetrisGame2();

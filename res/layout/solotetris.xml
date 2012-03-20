@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <View
+    <view
         android:id="@+id/sologame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:text=""
         android:textColor="#ffffff"

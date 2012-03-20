@@ -170,31 +170,40 @@ public class Start extends Activity implements OnGestureListener {
 		//		}
 		//
 		if (distanceY < (-1*sensitivity)) {
-			if (serverSide)
-				serverOut.println("2");
-			else
-				clientOut.println("2");
-
+			if(!soloMode)
+			{
+				if (serverSide)
+					serverOut.println("2");
+				else
+					clientOut.println("2");
+			}
+			
 			mTetrisView.pressKey(2);
 			return (true);
 		}
 
 		if (distanceX > sensitivity) {
-			if (serverSide)
-				serverOut.println("3");
-			else
-				clientOut.println("3");
-
+			if(!soloMode)
+			{
+				if (serverSide)
+					serverOut.println("3");
+				else
+					clientOut.println("3");
+			}
+			
 			mTetrisView.pressKey(3);
 			return (true);
 		}
 
 		if (distanceX < (-1*sensitivity)) {
-			if (serverSide)
-				serverOut.println("4");
-			else
-				clientOut.println("4");
-
+			if(!soloMode)
+			{
+				if (serverSide)
+					serverOut.println("4");
+				else
+					clientOut.println("4");
+			}
+			
 			mTetrisView.pressKey(4);
 			return (true);
 		}
@@ -204,11 +213,14 @@ public class Start extends Activity implements OnGestureListener {
 
 	@Override
 	public void onLongPress(MotionEvent e) {
-		if (serverSide)
-			serverOut.println("5");
-		else
-			clientOut.println("5");
-
+		if(!soloMode)
+		{
+			if (serverSide)
+				serverOut.println("5");
+			else
+				clientOut.println("5");
+		}
+		
 		if (mTetrisView != null)
 			mTetrisView.pressKey(5);
 	}
@@ -238,21 +250,28 @@ public class Start extends Activity implements OnGestureListener {
 			if ((mTetrisView.getMode() == LOSE) || (mTetrisView.getMode() == WIN))
 				System.exit(0);
 			if (mTetrisView.getMode() == READY) {
+				if(!soloMode)
+				{
+					if (serverSide)
+						serverOut.println("1");
+					else
+						clientOut.println("1");
+				}
+				
+				mTetrisView.pressKey(1);
+				if (mTetrisView2 != null)
+					mTetrisView2.pressKey(1);
+				return (true);
+			}
+
+			if(!soloMode)
+			{
 				if (serverSide)
 					serverOut.println("1");
 				else
 					clientOut.println("1");
-
-				mTetrisView.pressKey(1);
-				mTetrisView2.pressKey(1);
-				return (true);
 			}
-
-			if (serverSide)
-				serverOut.println("1");
-			else
-				clientOut.println("1");
-
+			
 			mTetrisView.pressKey(1);
 		}
 		return (true);
