@@ -20,10 +20,12 @@ package com.tetris;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -113,15 +115,28 @@ public class TetrisView extends TileView {
 		super(context);
 	}
 	public TetrisView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		initTetrisView();
+		this(context, attrs, 0);
 	}
 
 	public TetrisView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		initTetrisView();
+
+//		TypedArray a = getContext().obtainStyledAttributes(attrs,R.styleable.TileView);
+//	    //Use a
+//		Log.d("hi", a.toString());
+//	    double scale = a.getFloat(R.styleable.TileView_scale, 9);
+//	    int offset = a.getInteger(R.styleable.TileView_offset, 10);
+//	    //Don't forget this
+//	    a.recycle();
+	
 	}
 
+//	public TetrisView(Context context, AttributeSet attrs, int defStyle, double scale, int xOffset) {
+//		super(context, attrs, defStyle, scale, xOffset);
+//		initTetrisView();
+//	}
+	
 //	public TetrisView(Context context, AttributeSet attrs, int defStyle, TetrisGame a) {
 //		super(context, attrs, defStyle);
 //		initTetrisView();

@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.tetris"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <View
+    <com.tetris.TetrisView
         android:id="@+id/tetris"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        class="com.tetris.TetrisView" />
+        android:layout_height="wrap_content" 
+        custom:scale="0.5"
+        custom:pos="1"
+        />
 
-    <View
+    <com.tetris.TetrisView2
         android:id="@+id/tetris2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        class="com.tetris.TetrisView2" />
+        android:layout_height="wrap_content" 
+        custom:scale="0.5"
+        custom:pos="2"
+        />
 
     <TextView
         android:id="@+id/text"
@@ -22,7 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:text=""
         android:textColor="#ffffff"

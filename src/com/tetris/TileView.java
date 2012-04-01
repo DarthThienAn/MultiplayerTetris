@@ -19,12 +19,14 @@
 package com.tetris;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -47,8 +49,11 @@ public class TileView extends View {
 	protected final static int mYTileCount = 22;
 
 	private static int mXOffset;
+	private int pos;
 	private static int mYOffset;
-
+	
+//	private static double scale;
+	
 	/**
 	 * A hash that maps integer handles specified by the subclasser to the
 	 * drawable that will be used for that reference
@@ -69,19 +74,34 @@ public class TileView extends View {
 	}
 
 	public TileView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-
-		DisplayMetrics display = getResources().getDisplayMetrics();
-		int w = display.widthPixels;
-		mTileSize = (int) (Math.floor(w / mYTileCount) * .9);
+		this(context, attrs, 0);
 	}	
+	
 	public TileView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 
+		TypedArray a = getContext().obtainStyledAttributes(attrs,R.styleable.TileView);
+	    //Use a
+		Log.d("hi", a.toString());
+	    double scale = a.getFloat(R.styleable.TileView_scale, 1);
+	    int pos = a.getInteger(R.styleable.TileView_pos, 0);
+	    //Don't forget this
+	    a.recycle();
+	    
+	    this.pos = pos;
 		DisplayMetrics display = getResources().getDisplayMetrics();
-		int w = display.widthPixels;
-		mTileSize = (int) (Math.floor(w / mYTileCount) * .9);
+		int h = display.heightPixels;
+		mTileSize = (int) (scale * (Math.floor(h / mYTileCount) * 0.9));
 	}
+//	public TileView(Context context, AttributeSet attrs, int defStyle, double scale, int mXOffset) {
+//		super(context, attrs, defStyle);
+//
+////		this.scale = scale;
+//		this.mXOffset = mXOffset;
+//		DisplayMetrics display = getResources().getDisplayMetrics();
+//		int h = display.heightPixels;
+//		mTileSize = (int) (scale * (Math.floor(h / mYTileCount) * .9));
+//	}
 
 
 	/**
@@ -97,7 +117,7 @@ public class TileView extends View {
 
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-		mXOffset = 0;
+		mXOffset = (w - (w/pos)) + ((w - (mTileSize * mXTileCount)) / (2*pos));
 		mYOffset = ((h - (mTileSize * mYTileCount)) / 2);
 
 		mTileGrid = new int[mXTileCount][mYTileCount];

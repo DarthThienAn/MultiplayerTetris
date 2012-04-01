@@ -16,6 +16,22 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
+        public static final int pos=0x7f010002;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int scale=0x7f010001;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int tileSize=0x7f010000;
     }
     public static final class drawable {
@@ -71,13 +87,45 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TileView_pos com.tetris:pos}</code></td><td></td></tr>
+           <tr><td><code>{@link #TileView_scale com.tetris:scale}</code></td><td></td></tr>
            <tr><td><code>{@link #TileView_tileSize com.tetris:tileSize}</code></td><td></td></tr>
            </table>
+           @see #TileView_pos
+           @see #TileView_scale
            @see #TileView_tileSize
          */
         public static final int[] TileView = {
-            0x7f010000
+            0x7f010000, 0x7f010001, 0x7f010002
         };
+        /**
+          <p>This symbol is the offset where the {@link com.tetris.R.attr#pos}
+          attribute's value can be found in the {@link #TileView} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:pos
+        */
+        public static final int TileView_pos = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.tetris.R.attr#scale}
+          attribute's value can be found in the {@link #TileView} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:scale
+        */
+        public static final int TileView_scale = 1;
         /**
           <p>This symbol is the offset where the {@link com.tetris.R.attr#tileSize}
           attribute's value can be found in the {@link #TileView} array.

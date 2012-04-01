@@ -284,7 +284,12 @@ public class Start extends Activity implements OnGestureListener {
 
 			setContentView(R.layout.solotetris);
 
+			
+			
 			mTetrisView = (TetrisView) findViewById(R.id.sologame);
+//			mTetrisView = new TetrisView(1,1,1,1,1);
+//			mTetrisView = r.getId(R.id.sologame);
+//			mTetrisView = new TetrisView(context, attrs, defStyle, 1.0, 0);
 			mTetrisView.setTextView((TextView) findViewById(R.id.solotext));
 
 			mTetrisView.setMode(READY);

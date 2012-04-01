@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.tetris"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <view
+    <com.tetris.TetrisView
         android:id="@+id/sologame"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        class="com.tetris.TetrisView" />
+        android:layout_height="wrap_content" 
+        custom:scale="1.0"
+        custom:pos="1"
+        />
 
     <TextView
         android:id="@+id/solotext"

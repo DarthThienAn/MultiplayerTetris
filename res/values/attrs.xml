@@ -2,5 +2,7 @@
 <resources>
   <declare-styleable name="TileView">
     <attr name="tileSize" format="integer" />
-  </declare-styleable>
+    <attr name="scale" format="float" />
+    <attr name="pos" format="integer" />
+    </declare-styleable>
 </resources>

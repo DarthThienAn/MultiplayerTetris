@@ -28,7 +28,7 @@ import android.util.AttributeSet;
 /**
  * TetrisView: implementation of a simple game of Tetris
  */
-public class TetrisView2 extends TileView2 {
+public class TetrisView2 extends TileView {
 
 	/**
 	 * Current mode of application: READY to run, RUNNING, or you have already
@@ -110,6 +110,11 @@ public class TetrisView2 extends TileView2 {
 		super(context, attrs, defStyle);
 		initTetrisView();
 	}
+
+//	public TetrisView2(Context context, AttributeSet attrs, int defStyle, double scale, int xOffset) {
+//		super(context, attrs, defStyle, scale, xOffset);
+//		initTetrisView();
+//	}
 
 	private void initTetrisView() {
 		setFocusable(true);
